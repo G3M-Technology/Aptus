@@ -118,7 +118,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']  
+STATIC_URL = '/static/'
 
+# C'est ici que l'erreur se produit
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'), # Ou '/home/G3M/Aptus/static' directement
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # Ou un chemin absolu comme '/var/www/my_django_app/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
